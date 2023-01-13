@@ -23,24 +23,25 @@ resource "aws_vpc" "web_vpc" {
 resource "aws_subnet" "web_subnet" {
   vpc_id            = aws_vpc.web_vpc.id
   cidr_block        = "172.16.10.0/24"
-  availability_zone = "us-west-2a"
+  availability_zone = "us-west-2"
 
   tags = {
     Name = var.subnet_name
   }
 }
 
-resource "aws_security_group" "web_sg" {
+resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allow SSH inbound traffic"
-  vpc_id      = aws_vpc.web_vpc.id
+  vpc_id      = aws_vpc.main.id
 
   ingress {
     description      = "TLS from VPC"
-    from_port        = 22
-    to_port          = 22
+    from_port        = 443
+    to_port          = 443
     protocol         = "tcp"
     cidr_blocks      = [aws_vpc.web_vpc.cidr_block]
+    ipv6_cidr_blocks = [aws_vpc.web_vpc.ipv6_cidr_block]
   }
 
   egress {
