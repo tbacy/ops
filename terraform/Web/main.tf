@@ -70,11 +70,6 @@ resource "aws_instance" "devInstance" {
   ami = "ami-072bfa7f83b597e2b"
   instance_type = var.instance_type
   associate_public_ip_address = true
-  
-  network_interface {
-    network_interface_id = aws_network_interface.web_nic.id
-    device_index         = 0
-  }
 
   tags = {
     Name = var.instance_name
