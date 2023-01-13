@@ -1,0 +1,11 @@
+---
+- hosts: servers
+  become: true
+
+  tasks:
+  name: Install latest version of docker
+  apt:
+    name: docker.io
+    state: latest
+    update_cache: true
+    
