@@ -57,7 +57,7 @@ resource "aws_security_group" "allow_ssh" {
   }
 }
 
-resource "aws_network_interface" "web_nic" {
+resource "aws_network_interface" "nic" {
   subnet_id   = aws_subnet.web_subnet.id
   private_ips = ["172.16.10.100"]
 
