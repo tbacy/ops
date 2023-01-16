@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become: true
+
+  tasks:
+  - name: Rename Host
+    hostname:
+      name: server1
