@@ -17,7 +17,7 @@ provider "aws" {
 module "vpc" {
     source = "terraform-aws-modules/vpc/aws"
 
-    name = "my-vpc"
+    name = "dev-vpc"
     cidr = var.vpc_cidr_range
 
     azs = slice(data.aws_availability_zones.azs.names, 0, 2)
