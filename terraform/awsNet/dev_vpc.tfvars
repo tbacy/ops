@@ -1,0 +1,5 @@
+vpc_name = "dev_vpc"
+igw_name = "dev_igw"
+route_table_name = "dev_rt"
+ip4_route = "0.0.0.0/0"
+subnet_name = "dev_subnet"

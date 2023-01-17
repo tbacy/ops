@@ -25,3 +25,10 @@ variable "route_table_name" {
     default = "tf_rt"
   
 }
+
+variable "subnet_name" {
+    description = "Subnet name"
+    type = string
+    default = "tf_subnet"
+  
+}
