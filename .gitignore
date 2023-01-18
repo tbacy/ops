@@ -1,1 +1,5 @@
 terraform/awsNet/provider.tf
+terraform/cluster/providers.tf
+terraform/cluster/terraform.tfstate
+terraform/cluster/terraform.tfstate.backup
+terraform/cluster/.terraform.lock.hcl
